@@ -28,3 +28,67 @@ const fetchImage = async () => {
         console.log("Failed to fetch image", e);
     }
 };
+
+// Refresh Cat Button
+const button = document.createElement("button")
+document.body.append(button)
+button.style.width = "75px"
+button.style.height = "40px"
+button.innerText = 'New Cat'
+button.addEventListener("click", fetchImage)
+
+// Up Vote Button
+let clicks = 0;
+const upCounter = document.createElement("button")
+document.body.append(upCounter)
+upCounter.style.width = "75px"
+upCounter.style.height = "40px"
+upCounter.innerText = 'Up Vote'
+upCounter.style.display = "flex"
+window.addEventListener("DOMContentLoaded", event => {
+    const count = document.getElementById("clicked-count");
+    upCounter.addEventListener("click", event => {
+      clicks += 1;
+      count.innerHTML = clicks;
+    });
+  });
+
+
+// Down Vote Button
+const downCounter = document.createElement("button")
+document.body.append(downCounter)
+downCounter.style.width = "75px"
+downCounter.style.height = "40px"
+downCounter.style.display = "flex"
+downCounter.innerText = 'Down Vote'
+window.addEventListener("DOMContentLoaded", event => {
+    const count = document.getElementById("clicked-count");
+    downCounter.addEventListener("click", event => {
+      clicks -= 1;
+      count.innerHTML = clicks;
+    });
+  });
+
+// Total Vote Count Button 
+
+window.addEventListener("DOMContentLoaded", event => {
+    const originalText = document.getElementById("add");
+    originalText.addEventListener("input", event => {
+      let text = originalText.value;
+    })
+  });
+
+window.addEventListener("DOMContentLoaded", event => {
+    console.log('domcontent loaded')
+    const pastComments = document.getElementById("unorderedList")
+    const addCommentButton = document.getElementById("add")
+    const unorderedList = document.createElement("ul")
+
+    addItem.addEventListener("click", e => {
+        e.preventDefault()
+        const comment = document.getElementById("name")
+        const li = document.createElement("li")
+        li.innerText = name.value
+        pastComments.appendChild(li)
+    })
+})
