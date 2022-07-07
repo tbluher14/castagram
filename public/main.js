@@ -49,7 +49,9 @@ window.addEventListener("DOMContentLoaded", event => {
     const count = document.getElementById("clicked-count");
     upCounter.addEventListener("click", event => {
       clicks += 1;
-      count.innerHTML = clicks;
+      let totalvote = document.querySelector('.totalvote')
+      totalvote.innerHTML = clicks;
+      totalvote.innerHTML = `<span>${clicks}</span>`
     });
   });
 
@@ -62,14 +64,31 @@ downCounter.style.height = "40px"
 downCounter.style.display = "flex"
 downCounter.innerText = 'Down Vote'
 window.addEventListener("DOMContentLoaded", event => {
-    const count = document.getElementById("clicked-count");
-    downCounter.addEventListener("click", event => {
-      clicks -= 1;
-      count.innerHTML = clicks;
+  downCounter.addEventListener("click", event => {
+      const count = document.getElementById("clicked-count");
+      clicks += 1;
+      let totalvote = document.querySelector('.totalvote')
+      totalvote.innerHTML = clicks;
+      totalvote.innerHTML = `<span>${clicks}</span>`
     });
   });
 
-// Total Vote Count Button 
+// Total Vote Count Button
+const span = document.createElement('span')
+span.setAttribute('id', 'clicked-count')
+
+const votecount = document.createElement("button")
+votecount.className = 'totalvote'
+votecount.innerHTML = `<span>${clicks}</span>`
+// votecount.appendChild(span)
+// votecount.setAttribute('span', 'clicked-count')
+document.body.append(votecount)
+let totalvote = document.querySelector('.totalvote')
+totalvote.innerText = clicks
+votecount.style.width = "75px"
+votecount.style.height = "40px"
+votecount.style.display = "flex"
+// votecount.innerText = 'Vote Count'
 
 window.addEventListener("DOMContentLoaded", event => {
     const originalText = document.getElementById("add");
