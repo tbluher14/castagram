@@ -1,7 +1,7 @@
 export const createMainContent = () => {
     // Create h1
     const h1 = document.createElement("h1");
-    h1.innerText = "Catstagram";
+    h1.innerText = "Fake Instagram";
 
     // Create img
     const img = document.createElement("img");
@@ -11,7 +11,8 @@ export const createMainContent = () => {
     const container = document.querySelector(".container");
     container.appendChild(h1);
     container.appendChild(img);
-
+    document.body.style.backgroundColor = "tan"
+    
     fetchImage();
 };
 
@@ -33,8 +34,9 @@ const fetchImage = async () => {
 // Refresh Cat Button
 const button = document.createElement("button")
 document.body.append(button)
-button.style.width = "75px"
-button.style.height = "40px"
+button.style.width = "100px"
+button.style.height = "50px"
+button.style.alignContent = "center"
 button.innerText = 'New Cat'
 button.addEventListener("click", fetchImage)
 
@@ -44,8 +46,9 @@ button.addEventListener("click", fetchImage)
 let clicks = 0;
 const upCounter = document.createElement("button")
 document.body.append(upCounter)
-upCounter.style.width = "75px"
-upCounter.style.height = "40px"
+upCounter.style.width = "45px"
+upCounter.style.textAlign = "center"
+upCounter.style.height = "35px"
 upCounter.innerText = 'Up Vote'
 upCounter.style.display = "flex"
 window.addEventListener("DOMContentLoaded", event => {
@@ -66,13 +69,14 @@ button.addEventListener("click", event => {
 // Down Vote Button
 const downCounter = document.createElement("button")
 document.body.append(downCounter)
-downCounter.style.width = "75px"
-downCounter.style.height = "40px"
+downCounter.style.width = "45px"
+downCounter.style.height = "35px"
 downCounter.style.display = "flex"
+downCounter.style.alignItems = "center"
 downCounter.innerText = 'Down Vote'
 window.addEventListener("DOMContentLoaded", event => {
   downCounter.addEventListener("click", event => {
-      clicks += 1;
+      clicks -= 1;
       let totalvote = document.querySelector('.totalvote')
       totalvote.innerHTML = clicks;
     //   totalvote.innerHTML = `<span>${clicks}</span>`
@@ -89,8 +93,8 @@ votecount.className = 'totalvote'
 document.body.append(votecount)
 let totalvote = document.querySelector('.totalvote')
 totalvote.innerText = clicks
-votecount.style.width = "75px"
-votecount.style.height = "40px"
+votecount.style.width = "30px"
+votecount.style.height = "25px"
 votecount.style.display = "flex"
 
 
@@ -98,14 +102,14 @@ votecount.style.display = "flex"
 
 const commentInput = document.createElement("input")
 document.body.append(commentInput)
-commentInput.style.width = "250px"
-commentInput.style.height = "200px"
+commentInput.style.width = "200px"
+commentInput.style.height = "50px"
 
 // Button to Submit a Comment
 const commentSubmit = document.createElement("button")
 document.body.append(commentSubmit)
 commentSubmit.style.width = "75px"
-commentSubmit.style.height = "50px"
+commentSubmit.style.height = "40px"
 commentSubmit.innerText = "Submit Comment"
 
 // Comment's Section
